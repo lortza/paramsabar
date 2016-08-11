@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @critter.name %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @critter.age %>
+</p>
+
+<p>
+  <strong>Date last seen:</strong>
+  <%= @critter.date_last_seen %>
+</p>
+
+<p>
+  <strong>Color:</strong>
+  <%= @critter.color %>
+</p>
+
+<p>
+  <strong>Has collar:</strong>
+  <%= @critter.has_collar %>
+</p>
+
+<%= link_to 'Edit', edit_critter_path(@critter) %> |
+<%= link_to 'Back', critters_path %>

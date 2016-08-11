@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Paramsabar</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <header>
+    <p><strong><%= link_to 'Paramsabar', root_path %></strong> | <%= link_to "Home", home_path %> | <%= link_to "About", about_path %> | <%= link_to "Contact", contact_path %> | <%= link_to "Critters", critters_path %></p>
+    <hr>
+  </header>
+
+  <%= yield %>
+
+  <div style="margin-top: 10px; background-color: #f1f1f1; padding: 20px 30px;">
+    <%= debug(params) if Rails.env.development? %>
+  </div><!-- debug -->
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Critters</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Date last seen</th>
+      <th>Color</th>
+      <th>Has collar</th>
+      <th colspan="3">Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @critters.each do |critter| %>
+      <tr>
+        <td><%= critter.name %></td>
+        <td><%= critter.age %></td>
+        <td><%= critter.date_last_seen %></td>
+        <td><%= critter.color %></td>
+        <td><%= critter.has_collar %></td>
+        <td><%= link_to 'Show', critter %></td>
+        <td><%= link_to 'Edit', edit_critter_path(critter) %></td>
+        <td><%= link_to 'Destroy', critter, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Critter', new_critter_path %>

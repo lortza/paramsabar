@@ -1,0 +1,9 @@
+<h1>Pages#home</h1>
+
+<p><%= link_to "passing params 1 to contact", contact_path(taco: "sauce", kitty: "ralph") %></p>
+
+<p><%= link_to "about #{@user[:name]}", about_path(@user) %></p>
+<a href= "users/<%= @user[:food] %>" >link to <%= @user[:name] %>'s page</a>
+
+<hr>
+

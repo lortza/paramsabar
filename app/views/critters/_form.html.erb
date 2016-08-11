@@ -1,0 +1,79 @@
+<div class="form">
+  <%= form_for(@critter) do |f| %>
+    <% if @critter.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@critter.errors.count, "error") %> prohibited this critter from being saved:</h2>
+
+        <ul>
+        <% @critter.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field" id="name">
+      <%= f.label :name %><span class="required">*</span><br>
+      <%= f.text_field :name, autofocus: true, required: true %>
+    </div>
+    <div class="field" id="age">
+      <%= f.label :age %><br>
+      <%= f.number_field :age %>
+    </div>
+    <div class="field" id="date_last_seen">
+      <%= f.label :date_last_seen %><br>
+      <%= f.date_field :date_last_seen %>
+    </div>
+    <div class="field" id="color">
+      <%= f.label :color %><br>
+      <%= f.text_field :color %>
+    </div>
+    <div class="field" id="has_collar">
+      <%= f.label :has_collar %><br>
+      <%= f.check_box :has_collar %>
+    </div>
+    <div class="actions">
+      <%= f.submit disabled: false%>
+    </div>
+  <% end %>
+</div> <!-- form -->
+
+<div class="form">
+  <h2>Form 2</h2>
+  <form >
+  <input type="text" value="name">
+  </form>
+</div> <!-- form -->
+  
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+  // $(document).ready(function(){
+  //   $("#name").focus(function() {
+  //       console.log('in');
+  //   }).blur(function() {
+  //       console.log('out');
+  //   });
+  // });
+
+  $(document).ready(function(){
+      $("#name").click(function(){
+          $(".actions").hide();
+          $(".actions").prop("disabled", true);
+          // $(".actions").removeAttr("disabled");
+      });
+  });
+</script>
+
+
+<!-- <script type="text/javascript">
+
+  // jQuery(function() {
+  //   // jQuery("#name").blur(function(event){
+  //   //   event.preventDefault();
+  //   //   jQuery('.actions').prop("disabled", false);
+  //   //   // jQuery("#name:not(:empty)").prepend('<h1>title</h1>');
+  //   // });
+  // });
+
+</script> -->
