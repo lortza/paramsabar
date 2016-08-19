@@ -25,5 +25,5 @@
   <%= @critter.has_collar %>
 </p>
 
-<%= link_to 'Edit', edit_critter_path(@critter) %> |
-<%= link_to 'Back', critters_path %>
+<%= button_to 'Edit', edit_critter_path(@critter), :method => "get" %>
+<%= button_to 'Back', critters_path, :method => "get" %>
