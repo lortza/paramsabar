@@ -1,10 +1,15 @@
 class CrittersController < ApplicationController
-  before_action :set_critter, only: [:show, :edit, :update, :destroy]
+  before_action :set_critter, only: [:show, :edit, :update, :destroy, :surprise]
 
   # GET /critters
   # GET /critters.json
   def index
-    @critters = Critter.all
+    # @critters = Critter.all
+    if params[:search_name] #if the search key is present in the params hash
+      @critters = Critter.search(params[:search_name]).order('name')
+    else
+      @critters = Critter.all.order('name')
+    end #if
   end
 
   # GET /critters/1

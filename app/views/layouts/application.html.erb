@@ -8,8 +8,11 @@
 </head>
 <body>
   <header>
-    <p><strong><%= link_to 'Paramsabar', root_path %></strong> | <%= link_to "Home", home_path %> | <%= link_to "About", about_path %> | <%= link_to "Contact", contact_path %> | <%= link_to "Critters", critters_path %></p>
-    <hr>
+    <nav>
+      <p><strong><%= link_to 'Paramsabar', root_path %></strong> | <%= link_to "Home", home_path %> | <%= link_to "About", about_path %> | <%= link_to "Contact", contact_path %> | <%= link_to "Critters", critters_path %> </p>
+      <%= render "layouts/search" %>
+      <hr>
+    </nav>
   </header>
 
   <%= yield %>

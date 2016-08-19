@@ -4,6 +4,7 @@ class PagesController < ApplicationController
   before_action :set_user
 
   def home
+    @critters = Critter.all
   end
 
   def about
