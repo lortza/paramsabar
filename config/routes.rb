@@ -12,7 +12,11 @@ Rails.application.routes.draw do
   get 'contact' => 'pages#contact'
 
   get 'critters/:horse/:id' => "pages#contact"
+
+  get 'critters/:id/surprise/:has_collar' => 'critters#surprise', as: 'surprise_critter'
+
   get 'users/:food' => "pages#about"
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

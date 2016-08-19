@@ -61,6 +61,13 @@ class CrittersController < ApplicationController
       format.json { head :no_content }
     end
   end
+  def surprise
+    if params[:has_collar] == "true"
+      render :surprise_has_collar
+    else
+      render :surprise_no_collar
+    end
+  end #surprise
 
   private
     # Use callbacks to share common setup or constraints between actions.
